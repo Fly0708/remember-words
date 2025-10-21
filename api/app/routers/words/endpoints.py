@@ -18,5 +18,4 @@ def create_word(word: WordCreate):
         words_entity = Words(word=word.word)
         db.add(words_entity)
         db.commit()
-        db.refresh(words_entity)
         return {"id": words_entity.id}

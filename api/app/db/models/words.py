@@ -10,7 +10,7 @@ class Words(Base):
     __tablename__ = 'words'
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    word: Mapped[str] = mapped_column(String(255))
+    word: Mapped[str] = mapped_column(String(255), unique=True)
     create_time: Mapped[datetime | None] = mapped_column( server_default=text('CURRENT_TIMESTAMP'))
     update_time: Mapped[datetime | None] = mapped_column( server_default=text('CURRENT_TIMESTAMP'), onupdate=func.now())
 
